@@ -10,27 +10,25 @@ query getSingleCourse($courseId: Int!) {
   }
 }
 
-# Variables
+# All books
 {
-  "courseId": 1
-}
-
-# Sample query by id
-{
-  course(id:"1")
-  {id,title}  
-}
-
-# Sample query
-{
-  courses {
+  allBooks {
     id, title,description,author
   }
 }
 
-# fasdf
+# Book by id
 {
-  course(title:"The Complete Node.js Developer Course") {
-    id
+  bookById(id:"1")
+  {id,title}  
+}
+
+# Books by title
+{
+  booksByTitle(title:"nOd") {
+    id, title
   }
 }
+
+# NodeJS link
+https://rishabh.io/recipes/how-to-export-a-class-from-module-nodejs6.html
