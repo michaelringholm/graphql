@@ -44,7 +44,16 @@ function defineQuery() {
                     return coursesData[id];
                 }
             },
-            courses: {
+            coursesByTitle: {
+                type: new graphql.GraphQLList(courseType),
+                args: {
+                    title: { type: graphql.GraphQLString }
+                },
+                resolve: function (dummy, args, incomingMessage) {
+                    return coursesData.filter(course => course.title.toLowerCase().includes(args.title.toLowerCase()));
+                }
+            },            
+            allCourses: {
                 type: new graphql.GraphQLList(courseType),        
                 resolve: function () {
                     return coursesData;

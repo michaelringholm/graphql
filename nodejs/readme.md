@@ -27,3 +27,10 @@ query getSingleCourse($courseId: Int!) {
     id, title,description,author
   }
 }
+
+# fasdf
+{
+  course(title:"The Complete Node.js Developer Course") {
+    id
+  }
+}
