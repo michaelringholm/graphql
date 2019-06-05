@@ -1,5 +1,17 @@
+var fs = require('fs');
+ 
 class BookService {
     getBooks() {
+        return this.getBooksFromFile();
+    };
+
+    getBooksFromFile() {
+        var jsonData = fs.readFileSync('./books.json', 'utf8');
+        var data = JSON.parse(jsonData);
+        return data.books;
+    };
+
+    getBooksFromArray() {
         var books = [
             {
                 id: 1,
